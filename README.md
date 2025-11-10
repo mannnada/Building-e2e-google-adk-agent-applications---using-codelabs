@@ -1,27 +1,25 @@
-# Building-e2e-google-adk-agent-applications---using-codelabs
+# Agentic Multimodal E2E App (ADK + Agentic RAG) — Submission
 
-# Agentic Multimodal E2E App (ADK + Agentic RAG)
-
-Full-stack agent that accepts **text + images**, uses **Agentic RAG** over a DB + vector store, and serves a **web UI**. Deployed on Cloud Run.
+Full-stack agent that accepts **text + images**, uses **Agentic RAG** over a DB + vector store, and serves a web UI. Demo evidence provided via videos only.
 
 ---
 
-## 📌 Submission Links
-- **Live Demo URL:** https://<your-cloud-run-service>.run.app
-- **GitHub Repo:** https://github.com/<you>/<repo>
-- **Walkthrough Video (5–10 min):** https://youtu.be/<id>
-
-> The video shows: architecture → code tour → ingest image → ask questions → citations → (optional) deployment.
+## 🎬 Submission Videos (5)
+- **Video 1 — Overview & Setup**
+- **Video 2 — Backend & Agent Design**
+- **Video 3 — RAG, DB & Embeddings**
+- **Video 4 — Frontend & End-to-End Demo**
+- **Video 5 — Deployment & Troubleshooting**
 
 ---
 
 ## ✨ Features (Rubric Mapping)
-- **End-to-End**: UI → API → DB/Vector → grounded answers
-- **Multimodal**: image/PDF ingestion (e.g., receipts) + text
-- **Agentic RAG**: tool-calling to store, retrieve, and analyze
-- **Database Integration**: Firestore (Native) + vector search
-- **Artifacts**: GCS bucket for uploaded files
-- **Deployment**: Cloud Run + `/healthz` liveness
+- **End-to-End:** UI → API → DB/Vector → grounded answers  
+- **Multimodal:** image/PDF ingestion + text  
+- **Agentic RAG:** planner + tool-calling (store/search/analyze)  
+- **Database Integration:** Firestore (Native) + vector search  
+- **Artifacts:** GCS for uploads  
+- **Health Check:** `/healthz` liveness endpoint  
 
 ---
 
