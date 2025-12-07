@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Advance_Tool_agent",
+			"path": ".."
+		},
+		{
+			"name": "AI Agent Builder",
+			"path": "../../AI Agent Builder"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

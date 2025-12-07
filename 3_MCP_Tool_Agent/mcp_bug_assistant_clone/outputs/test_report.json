@@ -1,0 +1,439 @@
+{
+  "files_analyzed": 1,
+  "total_bugs": 18,
+  "syntax_errors": 0,
+  "reports": [
+    {
+      "file": "sample_buggy_code.py",
+      "language": "python",
+      "timestamp": "2025-12-06T21:36:33.840454",
+      "syntax_analysis": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "language": "python"
+      },
+      "bug_detection": {
+        "bugs_found": 18,
+        "bugs": [
+          {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 10,
+            "code": "# TODO: Refactor this entire module",
+            "issue": "TODO marker found",
+            "description": "Incomplete or temporary code"
+          },
+          {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 11,
+            "code": "# FIXME: Security issues need addressing",
+            "issue": "FIXME marker found",
+            "description": "Incomplete or temporary code"
+          },
+          {
+            "type": "security",
+            "severity": "high",
+            "line": 16,
+            "code": "result = eval(user_input)  # DANGEROUS!",
+            "issue": "Dangerous function: eval",
+            "description": "Security risk: eval() can execute arbitrary code"
+          },
+          {
+            "type": "security",
+            "severity": "high",
+            "line": 22,
+            "code": "exec(code_string)  # DANGEROUS!",
+            "issue": "Dangerous function: exec",
+            "description": "Security risk: exec() can execute arbitrary code"
+          },
+          {
+            "type": "error_handling",
+            "severity": "medium",
+            "line": 29,
+            "code": "except:  # Bare except - catches everything!",
+            "issue": "Bare except clause",
+            "description": "Catches all exceptions, may hide bugs"
+          },
+          {
+            "type": "security",
+            "severity": "critical",
+            "line": 33,
+            "code": "def password_logging(username, password):",
+            "issue": "Potential credential exposure",
+            "description": "Logging sensitive information"
+          },
+          {
+            "type": "security",
+            "severity": "critical",
+            "line": 35,
+            "code": "print(f\"User {username} logged in with password: {password}\")",
+            "issue": "Potential credential exposure",
+            "description": "Logging sensitive information"
+          },
+          {
+            "type": "security",
+            "severity": "critical",
+            "line": 36,
+            "code": "logger.info(f\"Password is: {password}\")",
+            "issue": "Potential credential exposure",
+            "description": "Logging sensitive information"
+          },
+          {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 47,
+            "code": "# TODO: Implement this function",
+            "issue": "TODO marker found",
+            "description": "Incomplete or temporary code"
+          },
+          {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 58,
+            "code": "# HACK: This is a temporary workaround",
+            "issue": "HACK marker found",
+            "description": "Incomplete or temporary code"
+          },
+          {
+            "type": "security",
+            "severity": "high",
+            "line": 60,
+            "code": "result = eval(input_data)",
+            "issue": "Dangerous function: eval",
+            "description": "Security risk: eval() can execute arbitrary code"
+          },
+          {
+            "type": "error_handling",
+            "severity": "medium",
+            "line": 61,
+            "code": "except:",
+            "issue": "Bare except clause",
+            "description": "Catches all exceptions, may hide bugs"
+          },
+          {
+            "type": "security",
+            "severity": "high",
+            "line": 68,
+            "code": "exec(open(filename).read())",
+            "issue": "Dangerous function: exec",
+            "description": "Security risk: exec() can execute arbitrary code"
+          },
+          {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 78,
+            "code": "# FIXME: This needs proper implementation",
+            "issue": "FIXME marker found",
+            "description": "Incomplete or temporary code"
+          },
+          {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 79,
+            "code": "# XXX: Temporary hack",
+            "issue": "XXX marker found",
+            "description": "Incomplete or temporary code"
+          },
+          {
+            "type": "security",
+            "severity": "critical",
+            "line": 85,
+            "code": "print(f\"API Key: {API_KEY}\")  # Exposing secrets!",
+            "issue": "Potential credential exposure",
+            "description": "Logging sensitive information"
+          },
+          {
+            "type": "security",
+            "severity": "high",
+            "line": 91,
+            "code": "mod = __import__(module_name)  # Dangerous!",
+            "issue": "Dangerous function: __import__",
+            "description": "Security risk: dynamic imports can be dangerous"
+          },
+          {
+            "type": "security",
+            "severity": "high",
+            "line": 99,
+            "code": "eval(user_code)  # Very dangerous!",
+            "issue": "Dangerous function: eval",
+            "description": "Security risk: eval() can execute arbitrary code"
+          }
+        ],
+        "severity_count": {
+          "critical": 4,
+          "high": 6,
+          "medium": 2,
+          "low": 6
+        },
+        "language": "python"
+      },
+      "fixes": [
+        {
+          "bug": {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 10,
+            "code": "# TODO: Refactor this entire module",
+            "issue": "TODO marker found",
+            "description": "Incomplete or temporary code"
+          },
+          "fix_available": true,
+          "explanation": "Complete the TODO/FIXME item or remove the marker if done.",
+          "suggested_fix": "Address the TODO/FIXME comment",
+          "patched_code": "# TODO: Refactor this entire module"
+        },
+        {
+          "bug": {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 11,
+            "code": "# FIXME: Security issues need addressing",
+            "issue": "FIXME marker found",
+            "description": "Incomplete or temporary code"
+          },
+          "fix_available": true,
+          "explanation": "Complete the TODO/FIXME item or remove the marker if done.",
+          "suggested_fix": "Address the TODO/FIXME comment",
+          "patched_code": "# FIXME: Security issues need addressing"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "high",
+            "line": 16,
+            "code": "result = eval(user_input)  # DANGEROUS!",
+            "issue": "Dangerous function: eval",
+            "description": "Security risk: eval() can execute arbitrary code"
+          },
+          "fix_available": true,
+          "explanation": "Replace eval() with safer alternatives like ast.literal_eval() for literals, or json.loads() for JSON data.",
+          "suggested_fix": "Use ast.literal_eval() or json.loads() instead",
+          "patched_code": "result = ast.literal_eval(user_input)  # DANGEROUS!"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "high",
+            "line": 22,
+            "code": "exec(code_string)  # DANGEROUS!",
+            "issue": "Dangerous function: exec",
+            "description": "Security risk: exec() can execute arbitrary code"
+          },
+          "fix_available": true,
+          "explanation": "Avoid exec() entirely. Refactor code to use functions, imports, or configuration files.",
+          "suggested_fix": "Refactor to eliminate exec() usage",
+          "patched_code": "# REFACTOR NEEDED: exec(code_string)  # DANGEROUS!"
+        },
+        {
+          "bug": {
+            "type": "error_handling",
+            "severity": "medium",
+            "line": 29,
+            "code": "except:  # Bare except - catches everything!",
+            "issue": "Bare except clause",
+            "description": "Catches all exceptions, may hide bugs"
+          },
+          "fix_available": true,
+          "explanation": "Specify exception types to catch. Use 'except Exception as e:' at minimum.",
+          "suggested_fix": "Specify exception type",
+          "patched_code": "except Exception as e:  # Bare except - catches everything!"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "critical",
+            "line": 33,
+            "code": "def password_logging(username, password):",
+            "issue": "Potential credential exposure",
+            "description": "Logging sensitive information"
+          },
+          "fix_available": true,
+          "explanation": "Never log sensitive data. Use masking or remove logging entirely.",
+          "suggested_fix": "Remove or mask sensitive data in logs",
+          "patched_code": "# REMOVE OR MASK: def password_logging(username, password):"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "critical",
+            "line": 35,
+            "code": "print(f\"User {username} logged in with password: {password}\")",
+            "issue": "Potential credential exposure",
+            "description": "Logging sensitive information"
+          },
+          "fix_available": true,
+          "explanation": "Never log sensitive data. Use masking or remove logging entirely.",
+          "suggested_fix": "Remove or mask sensitive data in logs",
+          "patched_code": "# REMOVE OR MASK: print(f\"User {username} logged in with password: {password}\")"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "critical",
+            "line": 36,
+            "code": "logger.info(f\"Password is: {password}\")",
+            "issue": "Potential credential exposure",
+            "description": "Logging sensitive information"
+          },
+          "fix_available": true,
+          "explanation": "Never log sensitive data. Use masking or remove logging entirely.",
+          "suggested_fix": "Remove or mask sensitive data in logs",
+          "patched_code": "# REMOVE OR MASK: logger.info(f\"Password is: {password}\")"
+        },
+        {
+          "bug": {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 47,
+            "code": "# TODO: Implement this function",
+            "issue": "TODO marker found",
+            "description": "Incomplete or temporary code"
+          },
+          "fix_available": true,
+          "explanation": "Complete the TODO/FIXME item or remove the marker if done.",
+          "suggested_fix": "Address the TODO/FIXME comment",
+          "patched_code": "# TODO: Implement this function"
+        },
+        {
+          "bug": {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 58,
+            "code": "# HACK: This is a temporary workaround",
+            "issue": "HACK marker found",
+            "description": "Incomplete or temporary code"
+          },
+          "fix_available": true,
+          "explanation": "Review and address the identified issue.",
+          "suggested_fix": "Manual review required",
+          "patched_code": "# HACK: This is a temporary workaround"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "high",
+            "line": 60,
+            "code": "result = eval(input_data)",
+            "issue": "Dangerous function: eval",
+            "description": "Security risk: eval() can execute arbitrary code"
+          },
+          "fix_available": true,
+          "explanation": "Replace eval() with safer alternatives like ast.literal_eval() for literals, or json.loads() for JSON data.",
+          "suggested_fix": "Use ast.literal_eval() or json.loads() instead",
+          "patched_code": "result = ast.literal_eval(input_data)"
+        },
+        {
+          "bug": {
+            "type": "error_handling",
+            "severity": "medium",
+            "line": 61,
+            "code": "except:",
+            "issue": "Bare except clause",
+            "description": "Catches all exceptions, may hide bugs"
+          },
+          "fix_available": true,
+          "explanation": "Specify exception types to catch. Use 'except Exception as e:' at minimum.",
+          "suggested_fix": "Specify exception type",
+          "patched_code": "except Exception as e:"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "high",
+            "line": 68,
+            "code": "exec(open(filename).read())",
+            "issue": "Dangerous function: exec",
+            "description": "Security risk: exec() can execute arbitrary code"
+          },
+          "fix_available": true,
+          "explanation": "Avoid exec() entirely. Refactor code to use functions, imports, or configuration files.",
+          "suggested_fix": "Refactor to eliminate exec() usage",
+          "patched_code": "# REFACTOR NEEDED: exec(open(filename).read())"
+        },
+        {
+          "bug": {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 78,
+            "code": "# FIXME: This needs proper implementation",
+            "issue": "FIXME marker found",
+            "description": "Incomplete or temporary code"
+          },
+          "fix_available": true,
+          "explanation": "Complete the TODO/FIXME item or remove the marker if done.",
+          "suggested_fix": "Address the TODO/FIXME comment",
+          "patched_code": "# FIXME: This needs proper implementation"
+        },
+        {
+          "bug": {
+            "type": "code_quality",
+            "severity": "low",
+            "line": 79,
+            "code": "# XXX: Temporary hack",
+            "issue": "XXX marker found",
+            "description": "Incomplete or temporary code"
+          },
+          "fix_available": true,
+          "explanation": "Review and address the identified issue.",
+          "suggested_fix": "Manual review required",
+          "patched_code": "# XXX: Temporary hack"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "critical",
+            "line": 85,
+            "code": "print(f\"API Key: {API_KEY}\")  # Exposing secrets!",
+            "issue": "Potential credential exposure",
+            "description": "Logging sensitive information"
+          },
+          "fix_available": true,
+          "explanation": "Never log sensitive data. Use masking or remove logging entirely.",
+          "suggested_fix": "Remove or mask sensitive data in logs",
+          "patched_code": "# REMOVE OR MASK: print(f\"API Key: {API_KEY}\")  # Exposing secrets!"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "high",
+            "line": 91,
+            "code": "mod = __import__(module_name)  # Dangerous!",
+            "issue": "Dangerous function: __import__",
+            "description": "Security risk: dynamic imports can be dangerous"
+          },
+          "fix_available": true,
+          "explanation": "Review and address the identified issue.",
+          "suggested_fix": "Manual review required",
+          "patched_code": "mod = __import__(module_name)  # Dangerous!"
+        },
+        {
+          "bug": {
+            "type": "security",
+            "severity": "high",
+            "line": 99,
+            "code": "eval(user_code)  # Very dangerous!",
+            "issue": "Dangerous function: eval",
+            "description": "Security risk: eval() can execute arbitrary code"
+          },
+          "fix_available": true,
+          "explanation": "Replace eval() with safer alternatives like ast.literal_eval() for literals, or json.loads() for JSON data.",
+          "suggested_fix": "Use ast.literal_eval() or json.loads() instead",
+          "patched_code": "ast.literal_eval(user_code)  # Very dangerous!"
+        }
+      ],
+      "summary": {
+        "syntax_valid": true,
+        "bugs_found": 18,
+        "severity": {
+          "critical": 4,
+          "high": 6,
+          "medium": 2,
+          "low": 6
+        }
+      }
+    }
+  ],
+  "generated_at": "2025-12-06T21:36:33.840454"
+}

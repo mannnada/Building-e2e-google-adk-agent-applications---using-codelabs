@@ -1,0 +1,97 @@
+{
+    "files_analyzed": 1,
+    "total_bugs": 15,
+    "syntax_errors": 0,
+    "generated_at": "2025-12-06T10:30:00.000000",
+    "reports": [
+        {
+            "file": "sample_buggy_code.py",
+            "language": "python",
+            "timestamp": "2025-12-06T10:30:00.000000",
+            "syntax_analysis": {
+                "valid": true,
+                "errors": [],
+                "warnings": [],
+                "language": "python"
+            },
+            "bug_detection": {
+                "bugs_found": 15,
+                "bugs": [
+                    {
+                        "type": "security",
+                        "severity": "high",
+                        "line": 14,
+                        "code": "result = eval(user_input)  # DANGEROUS!",
+                        "issue": "Dangerous function: eval",
+                        "description": "Security risk: eval() can execute arbitrary code"
+                    },
+                    {
+                        "type": "security",
+                        "severity": "high",
+                        "line": 19,
+                        "code": "exec(code_string)  # DANGEROUS!",
+                        "issue": "Dangerous function: exec",
+                        "description": "Security risk: exec() can execute arbitrary code"
+                    },
+                    {
+                        "type": "error_handling",
+                        "severity": "medium",
+                        "line": 26,
+                        "code": "except:  # Bare except - catches everything!",
+                        "issue": "Bare except clause",
+                        "description": "Catches all exceptions, may hide bugs"
+                    },
+                    {
+                        "type": "security",
+                        "severity": "critical",
+                        "line": 31,
+                        "code": "print(f\"User {username} logged in with password: {password}\")",
+                        "issue": "Potential credential exposure",
+                        "description": "Logging sensitive information"
+                    },
+                    {
+                        "type": "security",
+                        "severity": "critical",
+                        "line": 32,
+                        "code": "logger.info(f\"Password is: {password}\")",
+                        "issue": "Potential credential exposure",
+                        "description": "Logging sensitive information"
+                    }
+                ],
+                "severity_count": {
+                    "critical": 2,
+                    "high": 4,
+                    "medium": 1,
+                    "low": 8
+                },
+                "language": "python"
+            },
+            "fixes": [
+                {
+                    "bug": {
+                        "type": "security",
+                        "severity": "high",
+                        "line": 14,
+                        "code": "result = eval(user_input)",
+                        "issue": "Dangerous function: eval",
+                        "description": "Security risk: eval() can execute arbitrary code"
+                    },
+                    "fix_available": true,
+                    "explanation": "Replace eval() with safer alternatives like ast.literal_eval() for literals, or json.loads() for JSON data.",
+                    "suggested_fix": "Use ast.literal_eval() or json.loads() instead",
+                    "patched_code": "result = ast.literal_eval(user_input)"
+                }
+            ],
+            "summary": {
+                "syntax_valid": true,
+                "bugs_found": 15,
+                "severity": {
+                    "critical": 2,
+                    "high": 4,
+                    "medium": 1,
+                    "low": 8
+                }
+            }
+        }
+    ]
+}
