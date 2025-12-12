@@ -8,7 +8,7 @@ Full-stack agent that accepts **text + images**, uses **Agentic RAG** over a DB 
 - **Video 1 — https://youtu.be/uw2SbUY69Zc
 - **Video 2 — https://youtu.be/dYYN1fVyOJc
 - **Video 3 — https://youtu.be/O-T3Orkv1g4
-- **Video 4 — https://youtu.be/T0DoHvfx_cA
+- **Video 4 — https://youtu.be/rzYgMS1tLbs
 - **Video 5 — https://youtu.be/T0DoHvfx_cA
 
 ---
@@ -29,3 +29,4 @@ Python 3.12 · FastAPI · Google **Agent Development Kit (ADK)** · **Gemini 2.5
 ---
 
 ## 📂 Repo Layout
+
